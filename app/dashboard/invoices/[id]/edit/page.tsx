@@ -3,6 +3,7 @@ import Breadcrumbs from '@/app/ui/invoices/breadcrumbs';
 import { fetchInvoiceById, fetchCustomers } from '@/app/lib/data';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Edit Invoice',
@@ -21,17 +22,19 @@ export default async function Page({ params }: { params: { id: string } }) {
 
   return (
     <main>
-      <Breadcrumbs
-        breadcrumbs={[
-          { label: 'Invoices', href: '/dashboard/invoices' },
-          {
-            label: 'Edit Invoice',
-            href: `/dashboard/invoices/${id}/edit`,
-            active: true,
-          },
-        ]}
-      />
-      <Form invoice={invoice} customers={customers} />
+      <Suspense fallback={<div>Jebac Disa</div>}>
+        <Breadcrumbs
+          breadcrumbs={[
+            { label: 'Invoices', href: '/dashboard/invoices' },
+            {
+              label: 'Edit Invoice',
+              href: `/dashboard/invoices/${id}/edit`,
+              active: true,
+            },
+          ]}
+        />
+        <Form invoice={invoice} customers={customers} />
+      </Suspense>
     </main>
   );
 }
