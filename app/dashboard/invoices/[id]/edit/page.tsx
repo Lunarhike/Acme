@@ -22,7 +22,11 @@ export default async function Page({ params }: { params: { id: string } }) {
 
   return (
     <main>
-      <Suspense fallback={<div>Jebac Disa</div>}>
+      <Suspense
+        fallback={
+          <div className="text-[300px] text-red-500">SUSPENSE TEST BIJACZ</div>
+        }
+      >
         <Breadcrumbs
           breadcrumbs={[
             { label: 'Invoices', href: '/dashboard/invoices' },
