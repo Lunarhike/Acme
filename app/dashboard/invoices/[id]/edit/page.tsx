@@ -23,9 +23,7 @@ export default async function Page({ params }: { params: { id: string } }) {
   return (
     <main>
       <Suspense
-        fallback={
-          <div className="text-[300px] text-red-500">SUSPENSE TEST BIJACZ</div>
-        }
+        fallback={<div className="text-[300px] text-red-500">JEBAC DISA</div>}
       >
         <Breadcrumbs
           breadcrumbs={[
