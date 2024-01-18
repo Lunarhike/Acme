@@ -2,7 +2,7 @@
 const nextConfig = {
   // next-auth conflict - needs canary, but canary is not compatible yet
   experimental: {
-    // ppr: true,
+    ppr: true,
   },
 };
 
